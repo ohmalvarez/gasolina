@@ -38,10 +38,11 @@ Crear una página responsiva para consumir el servicio del punto anterior. Esta 
 - Ir al folder donde se alojan los proyectos de desarrollo.
 - En linea de comandos, ejecutar **git clone https://github.com/ohmalvarez/gasolina.git**
 - Crear una Base de Datos: **gasolina_dev**
+- En la raiz del proyecto copiar el contenido del archivo **.env.example** con el nuevo nombre **.env**
+- Editar el archivo **.env** para modificar el **DB host, DB port, DB name, DB user y el DB password**.
+- En este mismo archivo, agregar el parametro **API_GAS_GOB** con la url corta (https://api.datos.gob.mx)
 - En linea de comandos, ejecutar **php artisan migrate**
 - Llenar las tablas **c_estados, c_municipios y t_ubicaciones** con los datos del archivo (https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx).
-- En la raiz del proyecto copiar el contenido del archivo **.env.example** con el nuevo nombre **.env**
-- Editar el archivo **.env** para modificar el DB host, DB port, DB name, DB user y el DB password.
 - En el navegador de su preferencia ir a [ruta_proyecto] y realizar las busquedas necesarias.  
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
