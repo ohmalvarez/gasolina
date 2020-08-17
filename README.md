@@ -36,7 +36,7 @@ Crear una página responsiva para consumir el servicio del punto anterior. Esta 
 ## Configuracion
 
 - Ir al folder donde se alojan los proyectos de desarrollo.
-- En linea de comandos, ejecutar **git clone https://github.com/ohmalvarez/_.git**
+- En linea de comandos, ejecutar **git clone https://github.com/ohmalvarez/gasolina.git**
 - Crear una Base de Datos: **gasolina_dev**
 - En linea de comandos, ejecutar **php artisan migrate**
 - Llenar las tablas **c_estados, c_municipios y t_ubicaciones** con los datos del archivo (https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx).
