@@ -45,9 +45,17 @@ $(document).ready( function (){
                 "</tr>"
 
                 $('#precios tbody').append( newRow )
+                
+                // Consumo del api de google maps para agregar
+                // marcador por gasolinera con latitude y longitude
+                var latitud = value.latitude
+                var longitud = value.longitude
+                var GLatLng = new google.maps.LatLng( latitud, longitud )
+
+                console.log( GLatLng )
+
             })
 
-            // consumo del api de google maps
 
             })
 

@@ -24,7 +24,7 @@ Crear una página responsiva para consumir el servicio del punto anterior. Esta 
 - El consumo del servicio deberá ser asíncrono
 - Deberå funcionar el la mayoría de los navegadores (Chrome, Firefox, Safari, Edge)
 
-## Tecnologias and Requisitos
+## Tecnologias y Requisitos
 
 - PHP version >= 7.2.10 
 - Laravel ver 6.x

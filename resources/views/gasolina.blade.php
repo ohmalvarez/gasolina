@@ -88,6 +88,6 @@
 
         <script type="text/javascript" src="js/mapa.js"></script>
         <!-- Google Maps apiJs -->
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsFDligLj4APEeDGsKOd8sPGMsaqURV1c&callback=iniciarMapa"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGL_KEY') }}&callback=iniciarMapa"></script>
     </body>
 </html>
