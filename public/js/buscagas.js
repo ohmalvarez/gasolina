@@ -46,7 +46,11 @@ $(document).ready( function (){
 
                 $('#precios tbody').append( newRow )
             })
+
+            // consumo del api de google maps
+
             })
+
         }
 
     });

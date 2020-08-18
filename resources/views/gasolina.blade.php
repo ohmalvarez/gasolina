@@ -4,14 +4,23 @@
     <head>
         <meta charset="utf-8">
         <title>Gasolina</title>
-
         <!-- Latest compiled and minified CSS (Bootstrap) -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        
+        <style type="text/css">
+            #map {
+                height: 200px;
+                width: 100%;
+                margin: 0 auto;
+            }
+        </style>
+
         <!-- Jquery Js -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/buscagas.js"></script>
     </head>
     <body>
+
         <div class="container">
             @inject( 'estados', 'App\Services\Estadosget' )
             <div class="row">
@@ -25,10 +34,9 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12">
-                    <p>
+                <div class="col-md-4">
                         
-                        <div class="form-inline pull-right">
+                        <div class="form-inline pull-left">
                             <div class="form-group">
                                 <select id="estado" name="estado" class="form-control">
                                     <option>-Selecciona un Estado-</option>
@@ -38,27 +46,20 @@
                                         @endforeach
                                     @endif
                                 </select>
-                            </div>
-                            <div class="form-group">
+                                <br><br>
                                 <select id="municipio" name="municipio" class="form-control">
                                     <option>-Selecciona un Municipio-</option>
                                 </select>
                             </div>
 
-                        </div>
-
-                        
-                    </p>
+                        </div>    
+                </div>
+                
+                <div class="col-md-8">
+                    <div id="map" name="map"></div>
                 </div>
             </div>
-
-            <!--ACA VA EL MAPA-->
-            <!--<div class="row">
-                <div class="col-md-12">
-                    <h3>Mapa</h3>
-                </div>
-            </div>-->
-
+            <hr>
             <div class="row">
                 <div class="col-md-12">
                     
@@ -84,5 +85,9 @@
             </div>
 
         </div>
+
+        <script type="text/javascript" src="js/mapa.js"></script>
+        <!-- Google Maps apiJs -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsFDligLj4APEeDGsKOd8sPGMsaqURV1c&callback=iniciarMapa"></script>
     </body>
 </html>
