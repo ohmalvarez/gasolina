@@ -13,8 +13,16 @@ $(document).ready( function (){
                 $("#municipio").append("<option value='" + index + "'>" + value + " </option>")
             })
             })
+
+            // Traer lat, lng X estado
+            var LatLngEdo = {lat: 19.2433, lng: -103.725}
+            
+            map = new google.maps.Map(document.getElementById('map'), {
+              center: LatLngEdo,
+              zoom: 10
+            });
         }
-    
+
     });
 
     /*
@@ -31,7 +39,7 @@ $(document).ready( function (){
             // Limpiamos informacion previa para despues recorrer la respuesta 
             // del servicio y crear uno a uno los rows de la tabla #precios
             $('#precios tbody tr').remove()
-            $.each( datos, function( key, value ){ 
+            $.each( datos, function( key, value ){
                 var newRow = "<tr>" +
                 "<td>" + value.razonsocial + "</td>" +
                 "<td>" + value.rfc + "</td>" +
@@ -48,11 +56,14 @@ $(document).ready( function (){
                 
                 // Consumo del api de google maps para agregar
                 // marcador por gasolinera con latitude y longitude
-                var latitud = value.latitude
-                var longitud = value.longitude
-                var GLatLng = new google.maps.LatLng( latitud, longitud )
+                var GLatLng = new google.maps.LatLng( value.latitude, value.longitude )
 
-                console.log( GLatLng )
+                // Creando el marcador para la posicion inicial
+                var marker = new google.maps.Marker({
+                    position: GLatLng,
+                    map: map,
+                    title: value.razonsocial
+                })
 
             })
 
