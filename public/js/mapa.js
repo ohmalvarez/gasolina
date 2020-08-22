@@ -1,11 +1,11 @@
 function iniciarMapa(){
 
 // CDMX
-var LatLang = {lat: 19.4210838, lng: -99.1374843}
+var LatLng = {lat: 19.4210838, lng: -99.1374843}
 
 // Seteando el mapa
 map = new google.maps.Map(document.getElementById('map'), {
-  center: LatLang,
+  center: LatLng,
   zoom: 10
 });
 
