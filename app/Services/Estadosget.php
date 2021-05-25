@@ -13,7 +13,7 @@ class Estadosget
 		try{
 			$estados = Estados::get();
 			foreach ( $estados as $estado ) 
-				$estadosArray[ $estado->id ] = $estado->d_estados;
+				$estadosArray[ $estado->id ] = $estado->d_estado;
 
 			return $estadosArray;
 		} catch(\Exception $ex) {
