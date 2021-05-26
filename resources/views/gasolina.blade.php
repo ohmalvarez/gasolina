@@ -22,7 +22,7 @@
     <body>
 
         <div class="container">
-            @inject( 'estados', 'App\Services\Estadosget' )
+            @inject('estados','App\Services\Estadosget' )
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
