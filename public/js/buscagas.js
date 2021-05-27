@@ -4,6 +4,7 @@ $(document).ready( function (){
     $('#estado').on('change', function(){
         var estado_id = $(this).val()
         if ( $.trim(estado_id) != '' ) {
+            $('#precios tbody tr').remove()
             $.get( 'municipios/get', { estado_id: estado_id }, function( municipios ){
                 var estadoInfo = municipios.estado
                 var LatLngEdo = { lat: Number(estadoInfo.latitud), lng: Number(estadoInfo.longitud) }
