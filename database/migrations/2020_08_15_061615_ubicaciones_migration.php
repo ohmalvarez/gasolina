@@ -24,7 +24,7 @@ class UbicacionesMigration extends Migration
             $table->char('d_cp',10);
             $table->integer('c_estado');
             $table->integer('c_oficina');
-            $table->integer('c_cp');
+            $table->integer('c_cp')->default('0');
             $table->integer('c_tipo_asenta');
             $table->integer('c_mnpio');
             $table->integer('id_asenta_cpcons');
