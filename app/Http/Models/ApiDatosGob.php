@@ -17,7 +17,7 @@ class ApiDatosGob extends Model
     public function get()
     {
 		$url = env('API_GAS_GOB');
-    	
+
         // Utilizando libreria Guzzle
     	$client = new Client( [ 'base_uri' => $url ] );
 
@@ -25,16 +25,17 @@ class ApiDatosGob extends Model
     	// /v1/precio.gasolina.publico?page=3				<- x num pagina
     	// /v1/precio.gasolina.publico?pageSize=10100		<- x total pagina
     	$response = $client->request('GET', '/v1/precio.gasolina.publico?pageSize=10100');
-    	
+
     	$data = json_decode( $response->getBody() );
     	//gettype($data);// object
-    	
+
     	return $data->results;
     }
 
     // Correlaciona informacion de DB con datos obtenidos x api
     public function combineInfo ( Array $codigos )
     {
+        $combineResult = [];
         $ubicacionesApi = $this->get();
 
     	foreach ( $codigos as $item => $codigo ) {
@@ -46,7 +47,7 @@ class ApiDatosGob extends Model
 
         foreach ( $ubicacionesApi as $ubicacion ) {
         	if ( in_array( $ubicacion->codigopostal, $codigosP ) ) {
-        		$combineResult[] = array ( 
+        		$combineResult[] = array (
         			'id' => $ubicacion->_id,
 	        		'rfc' => $ubicacion->rfc,
 	        		'razonsocial' => $ubicacion->razonsocial,
@@ -66,7 +67,7 @@ class ApiDatosGob extends Model
 	        		'dieasel' => $ubicacion->dieasel,
 	        	);
         	}
-        	
+
         }
 
         return $combineResult;

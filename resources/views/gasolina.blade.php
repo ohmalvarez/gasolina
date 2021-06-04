@@ -6,10 +6,10 @@
         <title>Gasolina</title>
         <!-- Latest compiled and minified CSS (Bootstrap) -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        
+
         <style type="text/css">
             #map {
-                height: 200px;
+                height: 300px;
                 width: 100%;
                 margin: 0 auto;
             }
@@ -27,15 +27,15 @@
                 <div class="col-md-12">
                     <div class="page-header">
                         <h2>
-                           Lista de Precios Gasolina 
+                           Lista de Precios Gasolina
                         </h2>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-4">
-                        
+                <div class="col-md-12">
+
                         <div class="form-inline pull-left">
                             <div class="form-group">
                                 <select id="estado" name="estado" class="form-control">
@@ -46,23 +46,24 @@
                                         @endforeach
                                     @endif
                                 </select>
-                                <br><br>
                                 <select id="municipio" name="municipio" class="form-control">
                                     <option>-Selecciona un Municipio-</option>
                                 </select>
                             </div>
 
-                        </div>    
+                        </div>
                 </div>
-                
-                <div class="col-md-8">
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
                     <div id="map" name="map"></div>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-md-12">
-                    
+
                     <table id="precios" name="precios" class="table table-hover table-striped">
                         <thead>
                             <tr>
@@ -81,6 +82,12 @@
 
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="result" name="result"></div>
                 </div>
             </div>
 
