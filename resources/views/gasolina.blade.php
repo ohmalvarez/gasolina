@@ -18,6 +18,7 @@
         <!-- Jquery Js -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/buscagas.js"></script>
+        <script type="text/javascript" src="js/mapa.js"></script>
     </head>
     <body>
 
@@ -93,7 +94,6 @@
 
         </div>
 
-        <script type="text/javascript" src="js/mapa.js"></script>
         <!-- Google Maps apiJs -->
         <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGL_KEY') }}&callback=iniciarMapa"></script>
     </body>

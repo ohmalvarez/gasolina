@@ -19,6 +19,7 @@ class EstadoMigration extends Migration
             $table->integer('estados_id');
             $table->decimal('latitud', 10, 4);
             $table->decimal('longitud', 10, 4);
+            $table->boolean('active');
             $table->index('id');
         });
     }

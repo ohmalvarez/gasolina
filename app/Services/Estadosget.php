@@ -6,14 +6,15 @@ use App\Http\Models\Estados;
 /*
 	Service que llena el select de Estados
 */
-class Estadosget 
+class Estadosget
 {
 	public function get()
 	{
 		try{
 			$estados = Estados::get();
-			foreach ( $estados as $estado ) 
-				$estadosArray[ $estado->id ] = $estado->d_estado;
+			foreach ( $estados as $estado )
+                if ( $estado->active )
+				    $estadosArray[ $estado->id ] = $estado->d_estado;
 
 			return $estadosArray;
 		} catch(\Exception $ex) {

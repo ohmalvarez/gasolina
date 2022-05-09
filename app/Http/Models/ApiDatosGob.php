@@ -35,7 +35,7 @@ class ApiDatosGob extends Model
     // Correlaciona informacion de DB con datos obtenidos x api
     public function combineInfo ( Array $codigos )
     {
-        $combineResult = [];
+        $combineResult = $codigosP = [];
         $ubicacionesApi = $this->get();
 
     	foreach ( $codigos as $item => $codigo ) {
@@ -54,7 +54,7 @@ class ApiDatosGob extends Model
 	        		'date_insert' => $ubicacion->date_insert,
 	        		'numeropermiso' => $ubicacion->numeropermiso,
 	        		'fechaaplicacion' => $ubicacion->fechaaplicacion,
-	        		'﻿permisoid' => $ubicacion->﻿permisoid,
+	        		'permisoid' => $ubicacion->permisoid,
 	        		'longitude' => $ubicacion->longitude,
 	        		'latitude' => $ubicacion->latitude,
 	        		'codigopostal' => $ubicacion->codigopostal,
