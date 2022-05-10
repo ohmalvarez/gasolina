@@ -40,33 +40,35 @@ class ApiDatosGob extends Model
 
     	foreach ( $codigos as $item => $codigo ) {
     		$registro = Ubicaciones::bycodigo( $codigo['d_codigo'] )->first()->toArray();
-    		$codigosP[] = $codigo['d_codigo'];
-    		$codigosInfo[ $codigo['d_codigo'] ][ 'd_estado' ] = $registro['d_estado'];
-    		$codigosInfo[ $codigo['d_codigo'] ][ 'd_mnpio' ] = $registro['d_mnpio'];
+    		$codigosP[] = (int)$codigo['d_codigo'];
+    		$codigosInfo[ (int)$codigo['d_codigo'] ][ 'd_estado' ] = $registro['d_estado'];
+    		$codigosInfo[ (int)$codigo['d_codigo'] ][ 'd_mnpio' ] = $registro['d_mnpio'];
     	}
 
         foreach ( $ubicacionesApi as $ubicacion ) {
         	if ( in_array( $ubicacion->codigopostal, $codigosP ) ) {
-        		$combineResult[] = array (
+
+                array_push($combineResult,
+                    array (
         			'id' => $ubicacion->_id,
 	        		'rfc' => $ubicacion->rfc,
 	        		'razonsocial' => $ubicacion->razonsocial,
 	        		'date_insert' => $ubicacion->date_insert,
 	        		'numeropermiso' => $ubicacion->numeropermiso,
 	        		'fechaaplicacion' => $ubicacion->fechaaplicacion,
-	        		'permisoid' => $ubicacion->permisoid,
+                    'permisoid' => $ubicacion->﻿permisoid,
 	        		'longitude' => $ubicacion->longitude,
 	        		'latitude' => $ubicacion->latitude,
 	        		'codigopostal' => $ubicacion->codigopostal,
         			'calle' => $ubicacion->calle,
 	        		'colonia' => $ubicacion->colonia,
-	        		'municipio' => $codigosInfo[ $ubicacion->codigopostal ][ 'd_mnpio' ],
-	        		'estado' => $codigosInfo[ $ubicacion->codigopostal ][ 'd_estado' ],
+	        		'municipio' => $codigosInfo[ (int)$ubicacion->codigopostal ][ 'd_mnpio' ],
+	        		'estado' => $codigosInfo[ (int)$ubicacion->codigopostal ][ 'd_estado' ],
 	        		'regular' => $ubicacion->regular,
 	        		'premium' => $ubicacion->premium,
-	        		'dieasel' => $ubicacion->dieasel,
-	        	);
-        	}
+	        		'diesel' => $ubicacion->dieasel,
+                    ));
+            }
 
         }
 

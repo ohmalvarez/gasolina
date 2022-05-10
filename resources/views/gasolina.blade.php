@@ -76,7 +76,7 @@
                                 <th>CP</th>
                                 <th>Regular</th>
                                 <th>Premium</th>
-                                <th>Dieasel</th>
+                                <th>Diesel</th>
                             </tr>
                         </thead>
                         <tbody>
