@@ -17,6 +17,9 @@ class EstadoMigration extends Migration
             $table->bigIncrements('id');
             $table->char('d_estado',100);
             $table->integer('estados_id');
+            $table->decimal('latitud', 10, 4);
+            $table->decimal('longitud', 10, 4);
+            $table->boolean('active');
             $table->index('id');
         });
     }
